@@ -6,10 +6,19 @@ const router = express.Router()
 
 router.route('/').get(RestaurantsCtrl.apiGetRestaurants)
 
+
+router.route('/').get(RestaurantsCtrl.apiGetRestaurants)
+router.route('/id/:id').get(RestaurantsCtrl.apiGetRestaurantsById)
+router.route('/cuisines').get(RestaurantsCtrl.apiGetRestaurantCuisines)
+
+
+
 router
-    .route('/reviews')
+    .route('/review')
     .post(ReviewsCtrl.apiPostReview)
     .put(ReviewsCtrl.apiUpdateReview)
     .delete(ReviewsCtrl.apiDeleteReview)
+
+
 
 export default router
